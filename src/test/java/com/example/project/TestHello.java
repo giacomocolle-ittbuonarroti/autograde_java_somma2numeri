@@ -12,19 +12,34 @@ import java.io.*;
 public class TestHello {
 
    @Test
-   public void testHelloWorld()
-   {
-     PrintStream originalOut = System.out;
-     ByteArrayOutputStream bos = new ByteArrayOutputStream();
-     System.setOut(new PrintStream(bos));
+    public void testHelloWorld()
+    {
+        PrintStream originalOut = System.out;
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(bos));
 
-     // action
-     Hello.main(null);
+        // action
+        Hello.main(null);
 
-     // assertion
-     assertEquals("Hello world!\n", bos.toString());
+        // assertion
+        assertEquals("Hello world!", bos.toString());
 
-     // undo the binding in System
-     System.setOut(originalOut);
-   }
+        // undo the binding in System
+        System.setOut(originalOut);
+    }
+
+    @Test
+    public void testSomma()
+    {
+       int a=2;
+       int b=3;
+
+        // action
+
+
+        // assertion
+        assertEquals(5, Hello.somma(a,b));
+
+
+    }
 }
